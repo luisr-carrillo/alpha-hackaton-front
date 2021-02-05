@@ -64,6 +64,7 @@ export class LoginComponent implements OnInit {
         ({ statusCode, message }) => {
           switch (statusCode) {
             case 200:
+              localStorage.setItem("isLogged", "true");
               this.router.navigateByUrl('/home');
               break;
             case 201:
